@@ -1,3 +1,12 @@
+// Serveur HTTP pour Render
+const http = require('http');
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Bot is running!');
+});
+server.listen(process.env.PORT || 3000, () => {
+  console.log('🌐 Serveur HTTP démarré');
+});
 // bot.js - Bot Telegram principal pour Papa Gestion
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
